@@ -1,11 +1,8 @@
 package Day05
 
 import org.junit.jupiter.api.DynamicTest
-import org.junit.jupiter.api.Nested
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
 
 class Day05Tests {

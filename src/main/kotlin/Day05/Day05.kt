@@ -28,8 +28,8 @@ fun main(args: Array<String>) {
 
 fun react(polymer: String): String {
 
-    var reactingPolymer = polymer.toCharArray().toMutableList()
-    var reacted = false
+    val reactingPolymer = polymer.toCharArray().toMutableList()
+    var reacted: Boolean
 
     do {
         var i = 0

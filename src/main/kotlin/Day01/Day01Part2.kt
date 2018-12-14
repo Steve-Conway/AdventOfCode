@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
     val inputData = readIntInputData(inputFileName)
 
-    loop@ for (i in 1..1000) {
+    loop@ for (i in 1..1000) {  // Hard limit to how many cycles to go through
         for (change in inputData) {
             freq += change
             if (seen.contains(freq)) {
