@@ -24,6 +24,13 @@ fun main(args: Array<String>) {
     val biggestArea = coordAreas.values.max()
 
     println("Biggest area is $biggestArea")
+
+    println("Begin Part 2")
+
+    val safeRegionSize = getRegionSizeWithinDistance(targetCoords, minX, minY, maxX, maxY, 10000)
+
+    println("Safe regions size is $safeRegionSize")
+
 }
 
 fun parseCoords(str: String): Coord {
@@ -89,6 +96,31 @@ fun getEdgeReachingCoords(grid: List<List<Coord?>>): Set<Coord> {
 fun getCoordAreas(grid: List<List<Coord?>>, coords: Set<Coord>): Map<Coord, Int> {
 
     return grid.flatten().filterNotNull().filter{ coords.contains(it)}.groupingBy { it }.eachCount()
+}
+
+fun getRegionSizeWithinDistance(targetCoords: Set<Coord>, minX: Int, minY: Int, maxX: Int, maxY: Int, threshold: Int) : Int {
+
+
+    // Assume that we only need to search the area defined by extending the
+    // boundary by threshold/number of coords.
+
+    val margin = threshold / targetCoords.size
+
+    var total = 0
+
+    for (x in (minX - margin) .. (maxX + margin)) {
+        for (y in (minY - margin) .. (maxY + margin)) {
+            if (getTotalDistance(targetCoords, Coord(x, y)) < threshold) {
+                total++
+            }
+        }
+    }
+
+    return total
+}
+
+fun getTotalDistance(targetCoords: Set<Coord>, coord: Coord): Int {
+    return targetCoords.sumBy { it.distanceTo(coord) }
 }
 
 

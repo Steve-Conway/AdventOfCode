@@ -91,4 +91,21 @@ class Day06Tests {
         assertEquals(mapOf(d to 9, e to 17), coordAreas)
     }
 
+    @TestFactory
+    fun `get total distance from example coords`() =
+        listOf(
+            Coord(4, 3) to 30
+        ).map { (input, expected) ->
+            DynamicTest.dynamicTest("of ${input} is $expected") {
+                assertEquals(expected, getTotalDistance(exampleCoords, input))
+            }
+        }
+
+    @Test
+    fun `For example coords, get region size within 32 total distance`() {
+
+        val regionSize = getRegionSizeWithinDistance(exampleCoords, 1, 1, 8, 9, 32)
+
+        assertEquals(16, regionSize)
+    }
 }
