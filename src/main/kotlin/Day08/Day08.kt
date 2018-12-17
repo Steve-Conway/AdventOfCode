@@ -3,7 +3,8 @@ package Day08
 import readStringInputData
 
 
-data class Node (val numChildNodes: Int, val numMetaData: Int, val childNodes: List<Node>, val metadata: List<Int>, val totalLength : Int)
+data class Node (val numChildNodes: Int, val numMetaData: Int, val childNodes: List<Node>, val metadata: List<Int>,
+                 val totalLength: Int, val value: Int)
 
 fun main(args: Array<String>) {
 
@@ -18,6 +19,7 @@ fun main(args: Array<String>) {
     }
 
     println("Part 1: Metadata total is $metadataTotal")
+    println("Part2: Value is ${root.value}")
 
 }
 
@@ -36,8 +38,18 @@ fun buildNodeTree(input: List<Int>, pos: Int = 0): Node {
         totalLength += childNode.totalLength
     }
     val metadata = input.subList(nodeStart, nodeStart + numMetaData)
+    var value = 0
+    if (numChildNodes == 0) {
+        value = metadata.sum()
+    } else {
+        metadata.forEach {
+            if (it <= numChildNodes) {
+                value += childNodes[it - 1].value
+            }
+        }
+    }
 
-    return Node(numChildNodes, numMetaData, childNodes, metadata, totalLength)
+    return Node(numChildNodes, numMetaData, childNodes, metadata, totalLength, value)
 }
 
 fun visitNodeTree(node: Node, visitor: (node: Node) -> Unit) {

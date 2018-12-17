@@ -16,6 +16,7 @@ class Day08Tests {
         assertEquals(2, nodeA.numChildNodes)
         assertEquals(3, nodeA.numMetaData)
         assertEquals(listOf(1, 1, 2), nodeA.metadata)
+        assertEquals(66, nodeA.value)
 
         val (nodeB, nodeC) = nodeA.childNodes
 
@@ -23,11 +24,13 @@ class Day08Tests {
         assertEquals(0, nodeB.numChildNodes)
         assertEquals(3, nodeB.numMetaData)
         assertEquals(listOf(10, 11, 12), nodeB.metadata)
+        assertEquals(33, nodeB.value)
 
         assertEquals(6, nodeC.totalLength)
         assertEquals(1, nodeC.numChildNodes)
         assertEquals(1, nodeC.numMetaData)
         assertEquals(listOf(2), nodeC.metadata)
+        assertEquals(0, nodeC.value)
 
         val nodeD = nodeC.childNodes[0]
 
@@ -35,6 +38,7 @@ class Day08Tests {
         assertEquals(0, nodeD.numChildNodes)
         assertEquals(1, nodeD.numMetaData)
         assertEquals(listOf(99), nodeD.metadata)
+        assertEquals(99, nodeD.value)
     }
 
     @Test
