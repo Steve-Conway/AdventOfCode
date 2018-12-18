@@ -25,7 +25,7 @@ fun claimCoords(claim: Claim) {
     for (x: Int in claim.leftMargin until claim.leftMargin + claim.width) {
         for (y: Int in claim.topMargin until claim.topMargin + claim.height) {
             val claimCoord = Coord(x, y)
-            val claimedCnt = claimedCoords.get(claimCoord)
+            val claimedCnt = claimedCoords[claimCoord]
             if (claimedCnt == null) {
                 claimedCoords[claimCoord] = 1
             } else {
@@ -44,7 +44,7 @@ fun claimIsNonOverlapping(claim: Claim) : Boolean {
     for (x: Int in claim.leftMargin until claim.leftMargin + claim.width) {
         for (y: Int in claim.topMargin until claim.topMargin + claim.height) {
             val claimCoord = Coord(x, y)
-            val claimedCnt = claimedCoords.get(claimCoord)!!
+            val claimedCnt = claimedCoords[claimCoord]!!
             if (claimedCnt != 1) {
                 return false
             }

@@ -16,7 +16,7 @@ internal class Day11KtTest {
             CalcPowerInput(217, 196, 39) to 0,
             CalcPowerInput(101, 153, 71) to 4
         ).map { (input, expected) ->
-            DynamicTest.dynamicTest("for ${input} got $expected") {
+            DynamicTest.dynamicTest("for $input got $expected") {
                 assertEquals(expected, calcPower(input.x, input.y, input.serialNumber))
             }
         }
@@ -26,7 +26,7 @@ internal class Day11KtTest {
         listOf(
             18 to PowerSquare(33, 45, 29, 3)
         ).map { (input, expected) ->
-            DynamicTest.dynamicTest("for ${input} got $expected") {
+            DynamicTest.dynamicTest("for $input got $expected") {
                 assertEquals(expected, getBestPowerSquare(input, 3, 3))
             }
         }

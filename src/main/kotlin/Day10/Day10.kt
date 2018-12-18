@@ -44,7 +44,7 @@ fun printPoints(points: List<Point>) {
 
     for (y in minY..maxY) {
         for (x in minX..maxX) {
-            if (points.filter {it.posEquals(Point(x, y, 0, 0))}.isEmpty()) {
+            if (points.none {it.posEquals(Point(x, y, 0, 0))}) {
                 print(' ')
             } else {
                 print('#')

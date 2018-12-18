@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 
 class Day05Tests {
 
-    val exampleInput = "dabAcCaCBAcCcaDA"
+    private val exampleInput = "dabAcCaCBAcCcaDA"
 
     @TestFactory
     fun `Running reactable`() = listOf(
@@ -33,7 +33,7 @@ class Day05Tests {
         exampleInput to "dabCBAcaDA",
         "xXwIiSsjJWnQqNk" to "k"
     ).map { (input, expected) ->
-        DynamicTest.dynamicTest("when I react \"${input}\" then I get \"$expected\"") {
+        DynamicTest.dynamicTest("when I react \"$input\" then I get \"$expected\"") {
             assertEquals(expected, react(input))
         }
     }

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 class Day07Tests {
 
-    val exampleInput = listOf(
+    private val exampleInput = listOf(
         "Step C must be finished before step A can begin.",
         "Step C must be finished before step F can begin.",
         "Step A must be finished before step B can begin.",

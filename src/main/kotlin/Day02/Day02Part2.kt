@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
 
     fun commonLetters(first: String, second: String): String? {
         val chars: MutableList<Char> = mutableListOf()
-        var mismatched = false;
+        var mismatched = false
         for (i: Int in 0 until first.length) {
             if (first[i] == second[i]) {
                 chars.add(first[i])
@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
         for (j : Int in i+1 until inputData.size) {
             val common: String? = commonLetters(inputData[i], inputData[j])
             if (common != null) {
-                println("Common letters are \"${common}\" for \"${inputData[i]}\" and \"${inputData[j]}\"")
+                println("Common letters are \"$common\" for \"${inputData[i]}\" and \"${inputData[j]}\"")
                 break@outer
             }
         }

@@ -1,6 +1,6 @@
 package Day11
 
-private val serialNumber = 4842
+private const val serialNumber = 4842
 
 fun main(args: Array<String>) {
 
@@ -53,8 +53,8 @@ fun calcPower(x: Int, y: Int, serialNumber: Int): Int {
 fun calcSquarePower(grid: List<List<Int>>, x: Int, y: Int, size: Int) : Int {
 
     var total = 0
-    for (ix in x..(x+size-1))
-        for (iy in y.. y+size-1)
+    for (ix in x until x+size)
+        for (iy in y until y+size)
             total += grid[iy-1][ix-1]
     return total
 }

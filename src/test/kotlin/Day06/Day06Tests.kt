@@ -7,17 +7,17 @@ import kotlin.test.assertEquals
 
 class Day06Tests {
 
-    val exampleCoords = setOf(Coord(1, 1), Coord(1, 6), Coord(8, 3), Coord(3, 4), Coord(5, 5), Coord(8, 9))
+    private val exampleCoords = setOf(Coord(1, 1), Coord(1, 6), Coord(8, 3), Coord(3, 4), Coord(5, 5), Coord(8, 9))
 
-    val a = Coord(1, 1)
-    val b = Coord(1, 6)
-    val c = Coord(8, 3)
-    val d = Coord(3, 4)
-    val e = Coord(5, 5)
-    val f = Coord(8, 9)
-    val x = null
+    private val a = Coord(1, 1)
+    private val b = Coord(1, 6)
+    private val c = Coord(8, 3)
+    private val d = Coord(3, 4)
+    private val e = Coord(5, 5)
+    private val f = Coord(8, 9)
+    private val x = null
 
-    val exampleGrid =
+    private val exampleGrid =
         listOf(
             listOf(a, a, a, a, x, c, c, c),
             listOf(a, a, d, d, e, c, c, c),
@@ -30,8 +30,8 @@ class Day06Tests {
             listOf(b, b, x, f, f, f, f, f)
         )
 
-    val exampleEdgeCoords = setOf(a, b, c, f)
-    val exampleContainedCoords = setOf(d, e)
+    private val exampleEdgeCoords = setOf(a, b, c, f)
+    private val exampleContainedCoords = setOf(d, e)
 
     @TestFactory
     fun `Coord distance`() =
@@ -96,7 +96,7 @@ class Day06Tests {
         listOf(
             Coord(4, 3) to 30
         ).map { (input, expected) ->
-            DynamicTest.dynamicTest("of ${input} is $expected") {
+            DynamicTest.dynamicTest("of $input is $expected") {
                 assertEquals(expected, getTotalDistance(exampleCoords, input))
             }
         }

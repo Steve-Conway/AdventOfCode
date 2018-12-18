@@ -1,4 +1,4 @@
-package Day09;
+package Day09
 
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.TestFactory

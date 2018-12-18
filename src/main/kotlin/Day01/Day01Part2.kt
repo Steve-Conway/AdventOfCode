@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
         for (change in inputData) {
             freq += change
             if (seen.contains(freq)) {
-                println("Repeated freq = ${freq}")
+                println("Repeated freq = $freq")
                 break@loop
             }
             seen.add(freq)

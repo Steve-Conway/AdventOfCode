@@ -2,7 +2,7 @@ package Day10
 
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.TestFactory
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class Day10Tests {
@@ -49,7 +49,7 @@ class Day10Tests {
             "position=< 9, -1> velocity=< 3, -2>" to Point(9, -1, 3, -2),
             "position=<-9, -1> velocity=<-3, -2>" to Point(-9, -1, -3, -2)
         ).map { (input, expected) ->
-            DynamicTest.dynamicTest("for ${input} got $expected") {
+            DynamicTest.dynamicTest("for $input got $expected") {
                 assertEquals(expected, parsePoint(input))
             }
         }

@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 
 class Day08Tests {
 
-    val exampleInput = listOf(2, 3, 0, 3, 10, 11, 12, 1, 1, 0, 1, 99, 2, 1, 1, 2)
+    private val exampleInput = listOf(2, 3, 0, 3, 10, 11, 12, 1, 1, 0, 1, 99, 2, 1, 1, 2)
 
     @Test
     fun `Build node tree for example input`() {
